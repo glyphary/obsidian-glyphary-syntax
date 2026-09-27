@@ -1,0 +1,179 @@
+/* One set of block classes serves Reading View and the Live Preview widget. */
+
+.glyphary-callout,
+.glyphary-columns,
+.glyphary-collapse,
+.glyphary-gallery,
+.glyphary-container,
+.glyphary-rich-link-block {
+  margin: 1em 0;
+}
+
+.glyphary-callout-body > :first-child,
+.glyphary-collapse-body > :first-child,
+.glyphary-column > :first-child {
+  margin-top: 0;
+}
+
+.glyphary-callout-body > :last-child,
+.glyphary-collapse-body > :last-child,
+.glyphary-column > :last-child {
+  margin-bottom: 0;
+}
+
+/* Callout */
+
+.glyphary-callout {
+  border-left: 3px solid var(--callout-color, var(--interactive-accent));
+  border-radius: var(--radius-s, 4px);
+  background: color-mix(in srgb, var(--callout-color, var(--interactive-accent)) 10%, transparent);
+  padding: 0.75em 1em;
+}
+
+.glyphary-callout-title {
+  color: var(--callout-color, var(--text-accent));
+  font-weight: 700;
+  margin-bottom: 0.4em;
+}
+
+.glyphary-callout-note { --callout-color: var(--color-green); }
+.glyphary-callout-info { --callout-color: var(--color-blue); }
+.glyphary-callout-tip { --callout-color: var(--color-yellow); }
+.glyphary-callout-warning { --callout-color: var(--color-orange); }
+
+/* Columns */
+
+.glyphary-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+}
+
+.glyphary-column {
+  min-width: 0;
+}
+
+.glyphary-live-widget .glyphary-column {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s, 4px);
+  padding: 0.65em 0.8em;
+}
+
+/* Collapse */
+
+.glyphary-collapse {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s, 4px);
+  padding: 0.65em 0.85em;
+}
+
+.glyphary-collapse-summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.glyphary-collapse-body {
+  padding-top: 0.65em;
+}
+
+/* Gallery */
+
+.glyphary-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 0.6rem;
+}
+
+.glyphary-gallery p {
+  margin: 0;
+}
+
+.glyphary-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-s, 4px);
+}
+
+/* Rich link */
+
+.glyphary-rich-link {
+  display: flex;
+  gap: 0.9em;
+  align-items: stretch;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m, 6px);
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.glyphary-rich-link:hover {
+  border-color: var(--interactive-accent);
+  text-decoration: none;
+}
+
+.glyphary-rich-link-image {
+  width: 9rem;
+  flex: 0 0 9rem;
+  object-fit: cover;
+}
+
+.glyphary-rich-link-text {
+  display: grid;
+  gap: 0.25em;
+  min-width: 0;
+  padding: 0.7em 0.9em;
+}
+
+.glyphary-rich-link-title {
+  font-weight: 700;
+}
+
+.glyphary-rich-link-description {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.glyphary-rich-link-site {
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+}
+
+.glyphary-rich-link-missing {
+  color: var(--text-muted);
+}
+
+/* Live Preview widget chrome */
+
+.glyphary-live-widget {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0.8em 0;
+  color: var(--text-normal);
+}
+
+.glyphary-live-edit {
+  position: absolute;
+  top: 0.35em;
+  right: 0.35em;
+  opacity: 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s, 4px);
+  background: var(--background-primary);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.2em 0.45em;
+  font-size: var(--font-ui-smaller);
+}
+
+.glyphary-live-widget:hover .glyphary-live-edit,
+.glyphary-live-edit:focus-visible {
+  opacity: 1;
+}

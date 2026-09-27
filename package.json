@@ -1,0 +1,14 @@
+{
+  "name": "obsidian-glyphary-syntax",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.36.5",
+    "esbuild": "^0.25.4"
+  }
+}
